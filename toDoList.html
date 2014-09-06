@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="todoListApp">
+<head>
+	<meta charset="UTF-8">
+	<title>To Do List</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" defer></script>
+	<script src="bower_components/lodash/dist/lodash.compat.js" defer></script>
+	<script type="text/javascript" src="controller.js" defer></script>
+</head>
+<body ng-controller="todoListCtrl">
+
+<h1>To Do List</h1>
+<input type="text" ng-model="newTodo">
+<button ng-click="addItem()">Add</button>
+<h2>I need to...</h2>
+<ul>
+	<li ng-repeat="listItem in list">
+		<input type="checkbox" ng-model="listItem.done">
+		<span>{{listItem.descrip}}</span>
+	</li>
+	{{newTodo}}
+</ul>
+<button ng-click="clearCompleted()">Clear Completed</button>
+
+</body>
+</html>
